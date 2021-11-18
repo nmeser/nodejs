@@ -49,7 +49,7 @@ pipeline {
                  
               //  sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin "$ECR_REGISTRY"'
               //  sh 'docker pull "$ECR_REGISTRY/$APP_REPO_NAME:latest"'
-                sh 'docker container run -p 3000 --name nezihlogin "$ECR_REGISTRY/$APP_REPO_NAME:latest"'
+                sh 'docker container run -p 3000:3000 --name nezihlogin "$ECR_REGISTRY/$APP_REPO_NAME:latest"'
                 
             }
         }        
